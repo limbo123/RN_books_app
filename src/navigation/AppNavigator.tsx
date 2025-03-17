@@ -1,23 +1,24 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import BooksLibrary from '../screens/BooksLibrary';
-import BookDetails from '../screens/BookDetails';
-import LoadingScreen from '../screens/LoadingScreen';
+import BooksLibrary from 'src/screens/BooksLibrary';
+import BookDetails from 'src/screens/BookDetails';
+import LoadingScreen from 'src/screens/LoadingScreen';
+import { SCREENS } from 'src/navigation/screens';
 
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator initialRouteName={SCREENS.LOADING_SCREEN}>
         <Stack.Screen
-          name="Splash"
+          name={SCREENS.LOADING_SCREEN}
           component={LoadingScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Main" component={BooksLibrary} />
-        <Stack.Screen name="Details" component={BookDetails} />
+        <Stack.Screen name={SCREENS.BOOK_LIBRARY_SCREEN} component={BooksLibrary} options={{headerShown: false}} />
+        <Stack.Screen name={SCREENS.BOOK_DETAILS_SCREEN} component={BookDetails} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
