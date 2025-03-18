@@ -53,5 +53,5 @@ yarn android  # or npm run android
 ## 📌 TODO
 - [ ] Implement **Empty state** UI
 - [ ] Improve **Loading state** handling
-- [ ] Refactor **texts & colors** into constants for maintainability
+- [ ] Move **texts & colors** into constants for maintainability
 
